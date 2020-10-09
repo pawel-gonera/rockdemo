@@ -1,9 +1,7 @@
 package org.rockexample.services.impl;
 
 import org.junit.jupiter.api.Test;
-
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class CommaInputTokenizerTest {
@@ -21,8 +19,7 @@ class CommaInputTokenizerTest {
 
     @Test
     void testCommaInputTokenizerSyntax() {
-        assertThrows(NumberFormatException.class, () -> {
-            tokenizer.processInputTokens("1;2");
-        });
+        assertThrows(NumberFormatException.class,
+                () -> tokenizer.processInputTokens("1;2"));
     }
 }
