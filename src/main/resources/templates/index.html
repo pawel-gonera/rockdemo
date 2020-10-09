@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Rockwell Demo App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <form name='f' th:object="${demoForm}" method='POST'>
+            <p>
+                Select category: <select th:field="*{category}">
+                <option th:each="category : ${categories}" th:value="${category}" th:text="${category}"></option>
+            </select>
+            </p>
+            <p>
+                Input: <input type="text" th:field="*{input}">
+            </p>
+            <input name="submit" type="submit" value="submit"/>
+        </form>
+    </div>
+    <div class="row">
+        <table>
+            <tbody>
+            <tr th:each="line : ${results}">
+                <td><span th:text="${line}"> </span></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
